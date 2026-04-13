@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FigCare Systems | Managed IT for Bay Area Medical Practices</title>
+  <meta
+    name="description"
+    content="FigCare Systems provides remote-first managed IT, cybersecurity, cloud backup, and HIPAA-focused support for Bay Area medical practices."
+  />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f5f7fb;
+      --text: #10233b;
+      --muted: #5e6d7e;
+      --line: #e7edf4;
+      --accent: #a30d45;
+      --accent-dark: #7f0b34;
+      --teal: #18b9d7;
+      --shadow: 0 18px 60px rgba(16, 35, 59, 0.08);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: saturate(180%) blur(18px);
+      border-bottom: 1px solid rgba(231, 237, 244, 0.85);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .brand span {
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 58px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(24, 185, 215, 0.16), rgba(24, 185, 215, 0) 65%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -140px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(163, 13, 69, 0.12), rgba(163, 13, 69, 0) 65%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(16, 35, 59, 0.04);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--teal));
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .hero-copy {
+      max-width: 60ch;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.13rem;
+      line-height: 1.75;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 650;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0c1d31;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: #d2dbe5;
+      background: #fcfdff;
+    }
+
+    .mini-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(24, 185, 215, 0.15), rgba(24, 185, 215, 0) 68%);
+    }
+
+    .logo-stack {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .logo-stack img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+    }
+
+    .logo-stack h2 {
+      margin: 0;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-stack p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .trust-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .trust-icon {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--teal));
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .section-sub {
+      max-width: 60ch;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(16, 35, 59, 0.04);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+      background: linear-gradient(135deg, rgba(163, 13, 69, 0.12), rgba(24, 185, 215, 0.12));
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .services-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-panel {
+      padding: 34px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-mark {
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    }
+
+    .about-mark img {
+      width: min(280px, 72%);
+      object-fit: contain;
+    }
+
+    .about-copy p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.03rem;
+    }
+
+    .coverage {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+      border-radius: 36px;
+      color: #fff;
+      background: linear-gradient(135deg, #0f223a 0%, #173454 100%);
+      box-shadow: 0 24px 80px rgba(16, 35, 59, 0.16);
+    }
+
+    .cta-panel::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(24, 185, 215, 0.25), rgba(24, 185, 215, 0) 64%);
+    }
+
+    .cta-panel::after {
+      content: "";
+      position: absolute;
+      left: -90px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(163, 13, 69, 0.24), rgba(163, 13, 69, 0) 64%);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 16px;
+      max-width: 12ch;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .cta-panel p {
+      max-width: 58ch;
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.75;
+      font-size: 1.04rem;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--text);
+    }
+
+    .btn-light:hover {
+      background: #f2f7fb;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p {
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-list div {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(24, 185, 215, 0.7);
+      box-shadow: 0 0 0 4px rgba(24, 185, 215, 0.12);
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .submit {
+      justify-self: start;
+      cursor: pointer;
+    }
+
+    .footer {
+      padding: 36px 0 54px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .about-wrap,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .card,
+      .about-panel,
+      .contact-card,
+      .hero-card,
+      .cta-panel {
+        padding: 22px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.92rem;
+      }
+
+      .nav-cta {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="FigCare Systems logo" />
+        <span>FigCare Systems</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why FigCare</a>
+        <a href="#about">About</a>
+        <a href="#coverage">Bay Area Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Request a Consultation</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Remote-first IT support for Bay Area medical practices
+          </div>
+
+          <h1>Managed IT and cybersecurity for Bay Area medical practices</h1>
+
+          <p class="hero-copy">
+            FigCare Systems helps medical offices stay secure, supported, and running smoothly with remote-first IT services, proactive monitoring, cloud backup, and HIPAA-focused technology support.
+          </p>
+
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+            <a href="#services" class="btn btn-secondary">See Services</a>
+          </div>
+
+          <div class="mini-note">
+            Built for independent medical offices, specialty clinics, and healthcare practices across the Bay Area.
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="logo-stack">
+            <img src="logo.png" alt="FigCare Systems logo mark" />
+            <div>
+              <h2>FigCare Systems</h2>
+              <p>Professional IT support with a healthcare mindset</p>
+            </div>
+          </div>
+
+          <div class="trust-list">
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <div>
+                <strong>Medical-office focus</strong>
+                <span>Support designed for healthcare environments, sensitive data, and day-to-day office reliability.</span>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <div>
+                <strong>Remote-first model</strong>
+                <span>Fast help without turning every issue into an unnecessary on-site visit.</span>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <div>
+                <strong>Security and continuity</strong>
+                <span>Cybersecurity, cloud backup, and proactive maintenance to reduce downtime and risk.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What we do</div>
+            <h2 class="section-title">Technology support built for medical offices</h2>
+          </div>
+          <div class="section-sub">
+            Your practice depends on reliable systems, secure access, and steady day-to-day operations. FigCare Systems is built to help medical offices stay secure, efficient, and supported behind the scenes.
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Remote-first support</h3>
+            <p>Fast, professional support designed to resolve most issues without unnecessary travel, delays, or disruptions to the workday.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Security-minded systems</h3>
+            <p>Help protect workstations, accounts, and business systems with proactive monitoring, patching, endpoint protection, and access control support.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>Backup and continuity</h3>
+            <p>Cloud backup and recovery support designed to reduce risk, improve resilience, and keep the practice moving forward.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Services</div>
+            <h2 class="section-title">What FigCare Systems provides</h2>
+          </div>
+          <div class="section-sub">
+            Focused support for medical practices that want dependable IT without the cost and overhead of maintaining a full in-house team.
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="icon">A</div>
+            <h3>Managed IT Support</h3>
+            <p>Day-to-day support for medical office technology, user issues, account access, and overall system reliability.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">B</div>
+            <h3>Remote Help Desk</h3>
+            <p>Responsive remote support for staff, providers, and office managers when technology problems interrupt the day.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">C</div>
+            <h3>Cybersecurity and Endpoint Protection</h3>
+            <p>Security-minded support for office computers and accounts, including updates, patching, antivirus, and risk reduction.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">D</div>
+            <h3>Cloud Backup</h3>
+            <p>Secure backup solutions and recovery support to help protect important business data and reduce disruption.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">E</div>
+            <h3>Microsoft 365 Management</h3>
+            <p>Support for email, user accounts, permissions, password resets, onboarding, and day-to-day Microsoft 365 administration.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">F</div>
+            <h3>New Computer Setup and Deployment</h3>
+            <p>New workstation setup when needed, with larger hardware rollouts coordinated through trusted support resources.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">G</div>
+            <h3>HIPAA-Focused Technology Support</h3>
+            <p>Support built with healthcare workflows, security expectations, and sensitive information in mind.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">H</div>
+            <h3>Proactive Monitoring and Maintenance</h3>
+            <p>Routine oversight, patching, and maintenance to help catch issues early and keep systems running smoothly.</p>
+          </div>
+        </div>
+
+        <div class="services-note">
+          FigCare Systems focuses on core systems, security, and remote support. Printer, copier, and fax support are not a primary service offering.
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Why FigCare</div>
+            <h2 class="section-title">Why practices choose FigCare Systems</h2>
+          </div>
+          <div class="section-sub">
+            Medical offices need technology that works quietly and reliably in the background. That is the standard FigCare Systems is built around.
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Healthcare-focused approach</h3>
+            <p>Built for the pace, privacy, and operational pressure of medical-office environments.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Remote-first efficiency</h3>
+            <p>Most issues can be handled efficiently without wasting time on unnecessary site visits.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>Bay Area service model</h3>
+            <p>Focused on Bay Area practices with professional support and long-term relationship building in mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">Founded by someone who understands healthcare</h2>
+          </div>
+        </div>
+
+        <div class="about-wrap">
+          <div class="about-panel about-mark">
+            <img src="logo.png" alt="FigCare Systems logo" />
+          </div>
+
+          <div class="about-panel about-copy">
+            <p>
+              FigCare Systems was founded by Daniel Figueroa, BSN, RN, with a background rooted in healthcare from the beginning. Inspired early on by his mother’s work in the medical field, Daniel went on to work as a medical assistant before becoming a registered nurse.
+            </p>
+
+            <p>
+              His clinical background includes oncology, bone marrow transplant, step-down care, and travel nursing. That experience shaped the way FigCare Systems approaches technology support for medical practices: with professionalism, urgency, discretion, and respect for how important reliable systems are in healthcare.
+            </p>
+
+            <p>
+              FigCare Systems serves Bay Area medical offices with the goal of helping practices stay secure, efficient, and supported behind the scenes so doctors and staff can stay focused on caring for patients and running the practice.
+            </p>
+
+            <p>
+              My goal is simple: provide dependable, professional support that helps medical offices run more smoothly, more securely, and with less stress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="coverage" class="section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Service Area</div>
+            <h2 class="section-title">Serving Bay Area medical practices</h2>
+          </div>
+          <div class="section-sub">
+            FigCare Systems works with medical practices across the Bay Area through a remote-first support model designed for efficiency, security, and dependable ongoing service.
+          </div>
+        </div>
+
+        <div class="coverage">
+          <span class="pill">Pacifica</span>
+          <span class="pill">San Francisco</span>
+          <span class="pill">Daly City</span>
+          <span class="pill">South San Francisco</span>
+          <span class="pill">San Mateo</span>
+          <span class="pill">Burlingame</span>
+          <span class="pill">Millbrae</span>
+          <span class="pill">Oakland</span>
+          <span class="pill">Berkeley</span>
+          <span class="pill">Walnut Creek</span>
+          <span class="pill">San Jose</span>
+          <span class="pill">Peninsula and surrounding Bay Area communities</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Let your practice focus on patients</h2>
+          <p>
+            FigCare Systems helps take care of the systems behind the scenes so your office can stay productive, secure, and supported. Request a consultation to see whether we are the right fit for your practice.
+          </p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-light">Request a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Request a consultation</h2>
+          </div>
+          <div class="section-sub">
+            Tell us a little about your practice and current technology needs.
+          </div>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <p>
+              FigCare Systems provides remote-first managed IT, cybersecurity, cloud backup, and HIPAA-focused support for Bay Area medical offices.
+            </p>
+
+            <div class="contact-list">
+              <div><strong>Email:</strong> daniel@figcaresystems.com</div>
+              <div><strong>Service Area:</strong> Bay Area medical practices only</div>
+              <div><strong>Model:</strong> Remote-first, professional, ongoing support</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form action="mailto:daniel@figcaresystems.com" method="post" enctype="text/plain">
+              <div class="field-row">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="text" name="practice" placeholder="Practice Name" required />
+              </div>
+
+              <div class="field-row">
+                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="tel" name="phone" placeholder="Phone Number" />
+              </div>
+
+              <input type="text" name="employees" placeholder="Number of Employees / Computers" />
+
+              <textarea name="message" placeholder="Tell us about your office and what kind of support you're looking for." required></textarea>
+
+              <button type="submit" class="btn btn-primary submit">Send Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 FigCare Systems. All rights reserved.</div>
+      <div>FigCare Systems supports Bay Area medical practices with remote-first managed IT and cybersecurity services.</div>
+    </div>
+  </footer>
+</body>
+</html>
